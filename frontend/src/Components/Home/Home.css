@@ -4,12 +4,15 @@
     /* align-items: center; */
     background: #f3f3f3;
     height: 100vh;
+    padding: 1rem;
+    width: 100%;
+    overflow-x: auto;
 }
 .home-bar{
     align-self: center;
     display: flex;
     width: 70%;
-    min-width: 600px;
+    min-width: 200px;
     align-items: center;
     justify-content: space-evenly;
     padding: 0.5rem 2rem;
@@ -19,6 +22,7 @@
 }
 .create-btn{
     width: 15%;
+    min-width: 150px;
     height: 40px;
     
 }
@@ -34,7 +38,7 @@
     flex-direction: column;
     margin: 2rem;
     margin-top:3rem;
-    min-width: 230px;
+    min-width: 250px;
     box-shadow: 0px 4px 4px 0px rgba(0,0,0,.2);
     height: 350px;
     
@@ -145,8 +149,8 @@
     margin: 0;
 }
 .status-select{
-    width: 25%;
-    max-width: 500px;
+    width: 30%;
+    max-width: 400px;
     height: 45px;
     outline: none;
     background-color:#F5F5F5;
@@ -155,7 +159,7 @@
     font-size: 17;
     padding: 10px;
     margin: 0.5rem 1rem;
-    min-width: 200px;
+    min-width: 170px;
 
 }
 .buttons{
@@ -173,5 +177,35 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+    .home-bar{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        /* overflow-y: auto; */
+    }
+    .tasks{
+        display: flex;
+        width: 90%;
+        flex-direction: column;
+        align-content: center;
+        /* justify-content: center; */
+    }
+    .btn-cont{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .task-card{
+        min-width: 200px;
+        width: 90%;
+    }
+    .create-btn{
+        width: 80%;
+    }
+    .status-select{
+        width: 80%;
+        min-width: 100px;
     }
 }

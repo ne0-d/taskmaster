@@ -132,7 +132,7 @@ const Home = () => {
                 <div className="home-content">
                     <div className='home-bar'>
                         <button className='create-btn' onClick={setCreateModal}>Create</button>
-                        <div>
+                        <div className='btn-cont'>
                             <span>Sort by </span>
                             <select
                                 className='status-select'
@@ -149,7 +149,7 @@ const Home = () => {
 
                             </select>
                         </div>
-                        <div>
+                        <div className='btn-cont'>
                             <span>Status </span>
                             <select
                                 className='status-select'
