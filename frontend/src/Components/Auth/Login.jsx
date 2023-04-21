@@ -38,7 +38,9 @@ const Login = () => {
       }
     } catch (error) {
       if(error.response.status===409) 
-        alert("This username is already taken, try with a different username :(")
+        alert("This username is already taken, try with a different username :(");
+      if(error.response.status===500)
+        alert("Some internal error occured while regostering you, try again later :(")
     }
   }
 
@@ -53,7 +55,15 @@ const Login = () => {
       }
       
     } catch (error) {
-      if(error.response.status === 400) alert("Wrong Password")
+      if(error.response.status === 400) alert("Either username or password is wrong")
+      if(error.response.status === 403){
+        alert("User does not exists, create an account to login!");
+        setIsSignup(true);
+        setLoginData({ username: "", password: "" })
+
+      }
+      if(error.response.status===500)
+        alert("Some internal error occured, try again later :(")
     }
   }
 
@@ -105,7 +115,10 @@ const Login = () => {
           >
             Sign Up
           </button>
-          <p className="forgot-password" onClick={()=>{setIsSignup(false)}}> {isSignup ? "Already have an account, Signin" : "Dont have an account, Sign Up?" } </p>
+          <p className="forgot-password" onClick={()=>{
+            setIsSignup(false)
+            setSignupData({ name:"", username: "", password: "" })
+          }}> {isSignup ? "Already have an account, Signin" : "Dont have an account, Sign Up?" } </p>
         </form>
         
       </div>
@@ -144,7 +157,11 @@ const Login = () => {
           >
             Sign In
           </button>
-          <p className="forgot-password" onClick={()=> setIsSignup(true)}> {isSignup ? "Already have an account, Signin" : "Dont have an account, Sign Up?" } </p>
+          <p className="forgot-password" onClick={()=> {
+            setIsSignup(true)
+            setLoginData({ username: "", password: "" })
+            
+          }}> {isSignup ? "Already have an account, Signin" : "Dont have an account, Sign Up?" } </p>
         </form>
         
       </div>
