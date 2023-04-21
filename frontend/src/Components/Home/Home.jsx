@@ -83,6 +83,19 @@ const Home = () => {
         console.log(event.target.value);
     };
 
+    // const handleCreateModal = async (e) => {
+    //     e.preventDefault()
+    //     try {
+    //         setTasksData([...tasksData, createData]);
+    //         setCreateModal(false);
+    //         const response = await UserApi.createTask({ taskData: createData, userId: user.userData.userId });
+    //         setCreateData({ title: "", desc: "", dueDate: "", status: "Inbox" });
+    //         // window.location.reload(false);
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // }
+    
     const handleCreateModal = async (e) => {
         try {
             const response = await UserApi.createTask({ taskData: createData, userId: user.userData.userId });
@@ -92,7 +105,6 @@ const Home = () => {
             console.log(error)
         }
     }
-
     const handleEditModal = (item) => (e) => {
         e.preventDefault();
 
@@ -104,6 +116,7 @@ const Home = () => {
         // console.log(createData)
         try {
             const response = await UserApi.updateTask({ taskData: createData, userId: user.userData.userId });
+            
             setCreateData({ title: "", desc: "", dueDate: "", status: "Inbox" });
             window.location.reload(false);
         } catch (error) {
@@ -115,6 +128,21 @@ const Home = () => {
         setCreateModal(false);
         setCreateData({ title: "", desc: "", dueDate: "", status: "Inbox" })
     }
+    // const handleDelete = (it, idx) => async (e) => {
+    //     try {
+    //         console.log(it)
+    //         const response = await UserApi.deleteTask({ userId: user.userData.userId, taskId: it._id });
+    //         const newData = tasksData.filter((item, index)=>{
+    //             if(index !== idx) return item
+                
+    //         })
+    //         setTasksData(newData);
+    //         setCreateData({ title: "", desc: "", dueDate: "", status: "Inbox" });
+    //         // window.location.reload(false);
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // }
     const handleDelete = (id) => async (e) => {
         try {
             const response = await UserApi.deleteTask({ userId: user.userData.userId, taskId: id });
@@ -168,27 +196,28 @@ const Home = () => {
                         </div>
                     </div>
 
+                        {tasksData?.length >0 ?
                     <div className="tasks grid">
-                        {tasksData ?
-                            tasksData?.map((item) => {
+                         {   tasksData?.map((item, index) => {
                                 return (<div className='task-card'>
                                     <div className='title'>
-                                        <p className='head'>{item.title}</p>
-                                        <p className='duedate'>Due Date: {item.dueDate}</p>
+                                        <p className='head'>{item?.title}</p>
+                                        <p className='duedate'>Due Date: {item?.dueDate}</p>
                                     </div>
-                                    <div className='description'>{item.desc}</div>
+                                    <div className='description'>{item?.desc}</div>
                                     <div className="footer">
-                                        <img src={deleteIcon} alt="" onClick={handleDelete(item._id)} />
-                                        <span>{item.status}</span>
+                                        <img src={deleteIcon} alt="" onClick={handleDelete(item, index)} />
+                                        <span>{item?.status}</span>
                                         <img src={editIcon} alt="" onClick={handleEditModal(item)} />
                                     </div>
                                 </div>)
-                            }) :
-                            <p>Click on Create button to create tasks or add a notes.</p>
-
-                        }
+                            })} 
 
                     </div>
+                    :
+                    <p style={{width:"100%", fontWeight:"bold", color:"gray", textAlign:"center"}}> Click on Create button to create tasks or add notes.</p>
+
+                        }
                 </div> :
                 <div>Loading...</div>
             }
@@ -231,7 +260,7 @@ const Home = () => {
                                     type="text"
                                     name="title"
                                     value={createData.title}
-                                    className="loginForm-data"
+                                    className="loginForm-data homedata"
                                     placeholder="Title"
                                     onChange={(e) =>
                                         setCreateData({ ...createData, [e.target.name]: e.target.value })

@@ -139,7 +139,7 @@
 }
 .modal-data-cont{
     display: grid;  
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 2rem;
     column-gap: 2rem;
 }
@@ -162,16 +162,25 @@
     min-width: 170px;
 
 }
+.homeData{
+    width: 100px;
+}
 .buttons{
     display: flex;
     width: 70%;
     margin-top: 1rem;
 }
 
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 870px) {
     .modal-data-cont {
         display: flex;
         flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        width: 100%;
+    }
+    .homedata{
+        width: 50px !important;
     }
     .buttons{
         flex-direction: column;
@@ -202,10 +211,12 @@
         width: 90%;
     }
     .create-btn{
-        width: 80%;
+        width: 60%;
     }
     .status-select{
-        width: 80%;
-        min-width: 100px;
+        width: 60%;
+        /* min-width: 60%; */
+        /* min-width: 100px; */
     }
+   
 }
