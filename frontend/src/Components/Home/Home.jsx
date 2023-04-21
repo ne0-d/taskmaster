@@ -207,76 +207,82 @@ const Home = () => {
                     },
                     content: {
                         position: "absolute",
-                        top: "20%",
+                        top: "15%",
                         left: "25%",
                         right: "25%",
-                        bottom: "20%",
+                        bottom: "15%",
                         border: "1px solid #ccc",
                         background: "#fff",
                         overflow: "auto",
                         WebkitOverflowScrolling: "touch",
                         borderRadius: "40px",
                         outline: "none",
-                        padding: "2rem",
+                        padding: "2rem 1rem",
                     },
                 }}
             >
                 <div className="modal-cont">
                     <h2>Create New Task</h2>
                     <div className="modal-datas">
-                        <div>
-                            <label htmlFor="tite">Title</label>
-                            <input
-                                type="text"
-                                name="title"
-                                value={createData.title}
-                                className="loginForm-data"
-                                placeholder="Title"
-                                onChange={(e) =>
-                                    setCreateData({ ...createData, [e.target.name]: e.target.value })
-                                }
-                            />
+                        <div className='modal-data-cont'>
+                            <div className='modal-data'> 
+                                <label htmlFor="tite">Title</label>
+                                <input
+                                    type="text"
+                                    name="title"
+                                    value={createData.title}
+                                    className="loginForm-data"
+                                    placeholder="Title"
+                                    onChange={(e) =>
+                                        setCreateData({ ...createData, [e.target.name]: e.target.value })
+                                    }
+                                />
+                            </div>
 
-                            <label htmlFor="tite">Description</label>
-                            <input
-                                type="text"
-                                name="desc"
-                                value={createData.desc}
-                                className="loginForm-data desc"
-                                placeholder="Description"
-                                onChange={(e) =>
-                                    setCreateData({ ...createData, [e.target.name]: e.target.value })
-                                }
-                            />
+                            <div className='modal-data'>
+                                <label htmlFor="tite">Description</label>
+                                <input
+                                    type="text"
+                                    name="desc"
+                                    value={createData.desc}
+                                    className="loginForm-data desc"
+                                    placeholder="Description"
+                                    onChange={(e) =>
+                                        setCreateData({ ...createData, [e.target.name]: e.target.value })
+                                    }
+                                />
+                            </div>
                         </div>
-                        <div>
-                            <label htmlFor="dueDate">Due Date</label>
-                            <input
-                                type="date"
-                                name="dueDate"
-                                value={createData.dueDate}
-                                className="loginForm-data"
-                                placeholder="Due Date"
-                                onChange={(e) =>
-                                    setCreateData({ ...createData, [e.target.name]: e.target.value })
-                                }
-                            />
+                        <div className='modal-data-cont'>
+                            <div className='modal-data'>
+                                <label htmlFor="dueDate">Due Date</label>
+                                <input
+                                    type="date"
+                                    name="dueDate"
+                                    value={createData.dueDate}
+                                    className="loginForm-data"
+                                    placeholder="Due Date"
+                                    onChange={(e) =>
+                                        setCreateData({ ...createData, [e.target.name]: e.target.value })
+                                    }
+                                />
+                            </div>
 
-                            <label htmlFor="status">Status</label>
-                            <select
-                                name="status"
-                                id="status"
-                                className='status-select'
-                                value={createData.status}
-                                onChange={(e) =>
-                                    setCreateData({ ...createData, [e.target.name]: e.target.value })
-                                }
-                            >
-
-                                <option value="Inbox">Inbox</option>
-                                <option value="Completed">Completed</option>
-
-                            </select>
+                            <div className='modal-data'>
+                                <label htmlFor="status">Status</label>
+                                <select
+                                    name="status"
+                                    id="status"
+                                    className='status-select'
+                                    value={createData.status}
+                                    onChange={(e) =>
+                                        setCreateData({ ...createData, [e.target.name]: e.target.value })
+                                    }
+                                >
+                                    <option value="Inbox">Inbox</option>
+                                    <option value="Completed">Completed</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
 
@@ -302,76 +308,83 @@ const Home = () => {
                     },
                     content: {
                         position: "absolute",
-                        top: "20%",
+                        top: "15%",
                         left: "25%",
                         right: "25%",
-                        bottom: "20%",
+                        bottom: "15%",
                         border: "1px solid #ccc",
                         background: "#fff",
                         overflow: "auto",
                         WebkitOverflowScrolling: "touch",
                         borderRadius: "40px",
                         outline: "none",
-                        padding: "2rem",
+                        padding: "2rem 1rem",
+                        // paddingBottom:"2rem"
                     },
                 }}
             >
                 <div className="modal-cont">
                     <h2>Create New Task</h2>
                     <div className="modal-datas">
-                        <div>
-                            <label htmlFor="tite">Title</label>
-                            <input
-                                type="text"
-                                name="title"
-                                value={createData.title}
-                                className="loginForm-data"
-                                placeholder="Title"
-                                onChange={(e) =>
-                                    setCreateData({ ...createData, [e.target.name]: e.target.value })
-                                }
-                            />
+                        <div className='modal-data-cont'>
+                            <div className='modal-data'> 
+                                <label htmlFor="tite">Title</label>
+                                <input
+                                    type="text"
+                                    name="title"
+                                    value={createData.title}
+                                    className="loginForm-data"
+                                    placeholder="Title"
+                                    onChange={(e) =>
+                                        setCreateData({ ...createData, [e.target.name]: e.target.value })
+                                    }
+                                />
+                            </div>
 
-                            <label htmlFor="tite">Description</label>
-                            <input
-                                type="text"
-                                name="desc"
-                                value={createData.desc}
-                                className="loginForm-data desc"
-                                placeholder="Description"
-                                onChange={(e) =>
-                                    setCreateData({ ...createData, [e.target.name]: e.target.value })
-                                }
-                            />
+                            <div className='modal-data'>
+                                <label htmlFor="tite">Description</label>
+                                <input
+                                    type="text"
+                                    name="desc"
+                                    value={createData.desc}
+                                    className="loginForm-data desc"
+                                    placeholder="Description"
+                                    onChange={(e) =>
+                                        setCreateData({ ...createData, [e.target.name]: e.target.value })
+                                    }
+                                />
+                            </div>
                         </div>
-                        <div>
-                            <label htmlFor="dueDate">Due Date</label>
-                            <input
-                                type="date"
-                                name="dueDate"
-                                value={createData.dueDate}
-                                className="loginForm-data"
-                                placeholder="Due Date"
-                                onChange={(e) =>
-                                    setCreateData({ ...createData, [e.target.name]: e.target.value })
-                                }
-                            />
+                        <div className='modal-data-cont'>
+                            <div className='modal-data'>
+                                <label htmlFor="dueDate">Due Date</label>
+                                <input
+                                    type="date"
+                                    name="dueDate"
+                                    value={createData.dueDate}
+                                    className="loginForm-data"
+                                    placeholder="Due Date"
+                                    onChange={(e) =>
+                                        setCreateData({ ...createData, [e.target.name]: e.target.value })
+                                    }
+                                />
+                            </div>
 
-                            <label htmlFor="status">Status</label>
-                            <select
-                                name="status"
-                                id="status"
-                                className='status-select'
-                                value={createData.status}
-                                onChange={(e) =>
-                                    setCreateData({ ...createData, [e.target.name]: e.target.value })
-                                }
-                            >
-
-                                <option value="Inbox">Inbox</option>
-                                <option value="Completed">Completed</option>
-
-                            </select>
+                            <div className='modal-data'> 
+                                <label htmlFor="status">Status</label>
+                                <select
+                                    name="status"
+                                    id="status"
+                                    className='status-select'
+                                    value={createData.status}
+                                    onChange={(e) =>
+                                        setCreateData({ ...createData, [e.target.name]: e.target.value })
+                                    }
+                                >
+                                    <option value="Inbox">Inbox</option>
+                                    <option value="Completed">Completed</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
 

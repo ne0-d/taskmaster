@@ -112,12 +112,37 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    /* padding: 1rem; */
 }
 .modal-datas{
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    margin: 1rem;
+    /* padding: 1rem; */
     
+}
+.modal-data{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    gap: 0.6rem;
+}
+.modal-data input{
+    /* align-self: flex-start; */
+    margin: 0;
+}
+.modal-data-cont{
+    display: grid;  
+    grid-template-columns: repeat(2, 50%);
+    grid-gap: 2rem;
+    column-gap: 2rem;
+}
+
+
+.modal-data select{
+    margin: 0;
 }
 .status-select{
     width: 25%;
@@ -135,6 +160,18 @@
 }
 .buttons{
     display: flex;
-    width: 100%;
+    width: 70%;
     margin-top: 1rem;
+}
+
+@media screen and (max-width: 840px) {
+    .modal-data-cont {
+        display: flex;
+        flex-direction: column;
+    }
+    .buttons{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
