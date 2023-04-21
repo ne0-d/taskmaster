@@ -1,0 +1,78 @@
+
+* {
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif !important;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+
+}
+body{
+  margin: 0;
+  padding:0;
+}
+
+button{
+  font-style: normal;
+  font-weight: 700;
+  color: #FFFFFF;
+  background: #fc4c69;
+  border: 1px solid #D9D9D9;
+  border-radius: 7px;
+  margin-top: 30px;
+  margin: 1rem;
+  margin-right: 0;
+}
+
+button:hover{
+background: #ee1e41;
+  cursor: pointer;
+}
+
+/* #root {
+  height: 100%;
+  width: 100%;
+} */
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #AAA9A9;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #AAA9A9;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #AAA9A9;
+}
+.unautorizedAccess{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  overflow-y: hidden;
+}
